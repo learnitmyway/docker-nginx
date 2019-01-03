@@ -7,3 +7,6 @@ A Docker container that serves static content using Nginx
 
 ## Stop
 * `docker-compose down`
+
+## References
+https://hub.docker.com/_/nginx/
