@@ -1,3 +1,4 @@
 FROM nginx
 COPY nginx.conf /etc/nginx/nginx.conf
-COPY public /usr/share/nginx/html
+COPY public /var/www/public
+COPY private /var/www/private
