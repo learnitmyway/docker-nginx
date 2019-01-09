@@ -5,6 +5,25 @@
     <title>Docker Nginx</title>
   </head>
   <body>
-    Login
+    <div>
+      <label for="email">Password: </label>
+      <input id="password" type="password" required>
+    </div>
+    <div class="form-example">
+      <input id="login" type="submit" value="Log in">
+    </div>
+    <script>
+      function authenticate () {
+        var url = '/private'
+        var user = 'admin'
+        var password = document.querySelector('#password').value
+        var headers = new Headers();
+        var credentials = btoa(`${user}:${password}`)
+        headers.append('Authorization', `Basic ${credentials}`)
+        fetch(url, {method: 'GET', headers: headers})
+          .then(window.location = url)
+      }
+      document.querySelector('#login').addEventListener('click', authenticate)
+    </script>
   </body>
 </html>
