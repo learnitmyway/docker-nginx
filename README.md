@@ -4,6 +4,7 @@ A Docker container that serves static content using Nginx. It also uses basic au
 ## Run
 * Start `docker-compose up`
 * View at http://localhost
+* Enter password `admin`
 * Stop `docker-compose down`
 
 ## References
