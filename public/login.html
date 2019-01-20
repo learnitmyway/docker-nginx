@@ -7,8 +7,9 @@
   <body>
     <form>
       <div>
+        <input id="username" value="admin" autocomplete="off" hidden>
         <label for="email">Password: </label>
-        <input id="password" type="password" required>
+        <input id="password" type="password" autocomplete="current-password" required>
       </div>
       <div>
         <input type="submit" value="Log in">
@@ -18,7 +19,7 @@
       function authenticate (e) {
         e.preventDefault()
         var url = '/'
-        var user = 'admin'
+        var user = document.querySelector('#username').value
         var password = document.querySelector('#password').value
         var headers = new Headers();
         var credentials = btoa(`${user}:${password}`)
