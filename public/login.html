@@ -5,15 +5,18 @@
     <title>Docker Nginx</title>
   </head>
   <body>
-    <div>
-      <label for="email">Password: </label>
-      <input id="password" type="password" required>
-    </div>
-    <div class="form-example">
-      <input id="login" type="submit" value="Log in">
-    </div>
+    <form>
+      <div>
+        <label for="email">Password: </label>
+        <input id="password" type="password" required>
+      </div>
+      <div>
+        <input type="submit" value="Log in">
+      </div>
+    </form>
     <script>
-      function authenticate () {
+      function authenticate (e) {
+        e.preventDefault()
         var url = '/'
         var user = 'admin'
         var password = document.querySelector('#password').value
@@ -23,7 +26,7 @@
         fetch(url, {method: 'GET', headers: headers})
           .then(window.location = url)
       }
-      document.querySelector('#login').addEventListener('click', authenticate)
+      document.querySelector('form').addEventListener('submit', authenticate)
     </script>
   </body>
 </html>
